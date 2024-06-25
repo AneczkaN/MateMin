@@ -1,0 +1,41 @@
+<!-- core/templates/core/base.html -->
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MateMin</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    {% load static %}
+    <link href="{% static 'core/css/styles.css' %}" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Logo Section -->
+    <div id="top" class="flex justify-center items-center py-6">
+        <a href="{% url 'home' %}" class="text-5xl font-extrabold">MateMin</a>
+    </div>
+    <!-- Navbar -->
+    <header class="bg-gray-800 p-6">
+        <div class="container mx-auto flex justify-center space-x-6">
+            <nav class="flex space-x-6">
+                <a href="{% url 'calculator' %}" class="nav-link">Kalkulator</a>
+                <a href="{% url 'educational_links' %}" class="nav-link">Użyteczne linki</a>
+                <a href="{% url 'task_list' %}" class="nav-link">Zadania</a>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}" class="nav-link">Wyloguj się</a>
+                {% else %}
+                    <a href="{% url 'login' %}" class="nav-link">Zaloguj się</a>
+                {% endif %}
+                {% if user.is_staff %}
+                    <a href="{% url 'add_task' %}" class="nav-link">Dodaj Zadanie</a>
+                {% endif %}
+            </nav>
+        </div>
+    </header>
+    <!-- Main Content -->
+    <main class="flex-1">
+        {% block content %}{% endblock %}
+    </main>
+    <script src="{% static 'core/js/calculator.js' %}"></script>
+</body>
+</html>

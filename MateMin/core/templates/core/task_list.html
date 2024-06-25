@@ -1,0 +1,16 @@
+<!-- core/templates/core/task_list.html -->
+{% extends "core/base.html" %}
+
+{% block content %}
+<div class="container mx-auto mt-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {% for task in tasks %}
+        <a href="{% url 'task_detail' task_id=task.id %}" class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col items-center text-center">
+            <h3 class="text-xl font-bold text-blue-400">{{ task.title }}</h3>
+            <p class="text-gray-300">{{ task.description }}</p>
+            <p class="text-sm text-gray-400 mt-2">Dodano: {{ task.created_at|date:"F d, Y" }}</p>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

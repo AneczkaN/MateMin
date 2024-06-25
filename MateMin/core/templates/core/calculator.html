@@ -1,0 +1,45 @@
+<!-- core/templates/core/calculator.html -->
+{% extends "core/base.html" %}
+
+{% block content %}
+
+<main class="flex-1 flex flex-col justify-center items-center p-6 bg-gray-900 bg-opacity-50">
+    <div class="w-full max-w-lg">
+        <div id="calculator-form" class="bg-black bg-opacity-75 p-8 rounded-lg shadow-lg">
+            <h2 class="text-3xl font-bold text-white mb-6">Kalkulator</h2>
+            <div class="mb-4">
+                <label for="id_expression" class="block text-gray-300 text-sm font-bold mb-2">Wprowadź wyrażenie arytmetyczne:</label>
+                <input type="text" id="id_expression" class="w-full px-3 py-2 bg-gray-800 text-white rounded-lg" value="{{ expression }}" required>
+            </div>
+            <div class="grid grid-cols-4 gap-2">
+                <button type="button" class="calc-button" data-value="(">(</button>
+                <button type="button" class="calc-button" data-value=")">)</button>
+                <button type="button" class="calc-button" data-value="^">^</button>
+                <button type="button" class="calc-button" data-value="/">/</button>
+                <button type="button" class="calc-button" data-value="7">7</button>
+                <button type="button" class="calc-button" data-value="8">8</button>
+                <button type="button" class="calc-button" data-value="9">9</button>
+                <button type="button" class="calc-button" data-value="*">*</button>
+                <button type="button" class="calc-button" data-value="4">4</button>
+                <button type="button" class="calc-button" data-value="5">5</button>
+                <button type="button" class="calc-button" data-value="6">6</button>
+                <button type="button" class="calc-button" data-value="-">-</button>
+                <button type="button" class="calc-button" data-value="1">1</button>
+                <button type="button" class="calc-button" data-value="2">2</button>
+                <button type="button" class="calc-button" data-value="3">3</button>
+                <button type="button" class="calc-button" data-value="+">+</button>
+                <button type="button" class="calc-button" data-value="0">0</button>
+                <button type="button" class="calc-button" data-value="e">e</button>
+                <button type="button" class="calc-button" data-value="pi">π</button>
+                <button type="button" class="calc-button" data-value="sqrt">sqrt</button>
+                <button type="button" class="calc-button" data-value="sin">sin</button>
+                <button type="button" class="calc-button" data-value="cos">cos</button>
+                <button type="button" class="calc-button" data-value="tan">tan</button>
+                <button type="button" id="clear-button" class="clear-button">C</button>
+                <button type="button" id="equal-button" class="equal-button" data-value="=">=</button>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
+
