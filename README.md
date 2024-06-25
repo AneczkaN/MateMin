@@ -9,17 +9,20 @@ Strona internetowa do zarządzania artykułami i zadaniami z zakresu matematyki.
 1. **Rejestracja i logowanie użytkowników**
    - Użytkownicy mogą się rejestrować i logować na swoje konta.
 
-2. **Przeglądanie artykułów i zadań**
+2. **Artykuły i zadania**
    - Użytkownicy mogą przeglądać listę artykułów i zadań.
 
 3. **Dodawanie komentarzy**
-   - Zalogowani użytkownicy mogą dodawać komentarze do artykułów i zadań.
+   - Zalogowani użytkownicy mogą dodawać komentarze pod artykułami i zadaniami.
 
 4. **Linki edukacyjne**
    - Przeglądanie i dostęp do linków edukacyjnych na różne tematy.
 
 5. **Zarządzanie treściami**
    - Użytkownicy z uprawnieniami administratora mogą dodawać nowe zadania i artykuły.
+  
+6. **Kalkulator**
+   - Wbudowany kalkulator liczący między innymi funkcje trygonometryczne.
 
 ## Instalacja
 
