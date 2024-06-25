@@ -26,7 +26,7 @@ Strona internetowa do zarządzania artykułami i zadaniami z zakresu matematyki.
 
 ## Instalacja
 
-1. Pobierz repozytorium na komputer:
+1. Pobierz repozytorium na komputer.
 
 2. Zainstaluj zależności:
    Upewnij się, że masz zainstalowane django, jeżeli nie, to możesz to zrobić przez pip:
