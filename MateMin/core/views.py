@@ -3,18 +3,18 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required, user_passes_test
 from .models import Task, Article
 from .forms import TaskForm, CommentForm, ArticleCommentForm
-from django.contrib.auth import login as auth_login, authenticate
+from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.urls import reverse_lazy
 from django.views import generic
 from django.contrib import messages
 
-def login(request):
+def signin(request):
     if request.method == 'POST':
         form = AuthenticationForm(request, request.POST)
         if form.is_valid():
             user = form.get_user()
-            auth_login(request, user)
+            login(request, user)
             return redirect('home')
         else:
             for error in form.errors.values():
